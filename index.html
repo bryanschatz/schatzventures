@@ -2,25 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Schatz Ventures</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#f7efe4" />
+
   <style>
-    body {
-      background-color: #f7efe4;
-      margin: 0;
-      display: flex;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
+    :root {
+      --brand-bg: #f7efe4;
     }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background-color: var(--brand-bg);
+      display: grid;
+      place-items: center;
+      min-height: 100dvh; /* dynamic viewport unit for mobile */
+    }
+
     img {
-      max-width: 90%;
-      max-height: 90%;
+      display: block;
+      width: min(800px, 90vw);
+      height: auto;
+      max-height: 90dvh;
+    }
+
+    .fallback {
+      position: absolute;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font: 500 0.95rem/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: #333;
+      opacity: 0.75;
     }
   </style>
 </head>
 <body>
-  <img src="schatzventureslogo.png" alt="Schatz Ventures Logo" />
+  <img
+    src="schatzventureslogo.png"
+    alt="Schatz Ventures"
+    width="1600"
+    height="900"
+    onerror="this.style.display='none'; document.getElementById('fallback').hidden=false;"
+  />
+  <div id="fallback" class="fallback" hidden>Schatz Ventures</div>
 </body>
 </html>
-
