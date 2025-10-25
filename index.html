@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Schatz Ventures</title>
-
   
   <!-- Favicon package -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -14,32 +13,44 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f7efe4">
   <meta name="msapplication-TileColor" content="#f7efe4">
   <meta name="theme-color" content="#f7efe4">
-
-
   <style>
     :root {
       --brand-bg: #f7efe4;
     }
-
     html, body {
       height: 100%;
       margin: 0;
     }
-
     body {
       background-color: var(--brand-bg);
       display: grid;
       place-items: center;
       min-height: 100dvh; /* dynamic viewport unit for mobile */
     }
-
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
     img {
       display: block;
       width: min(800px, 90vw);
       height: auto;
-      max-height: 90dvh;
+      max-height: 80dvh;
     }
-
+    .email {
+      font: 500 1.1rem/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: #333;
+    }
+    .email a {
+      color: #333;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .email a:hover {
+      opacity: 0.7;
+    }
     .fallback {
       position: absolute;
       bottom: 2rem;
@@ -53,16 +64,18 @@
   </style>
 </head>
 <body>
-  <img
-    src="schatzventureslogo.png"
-    alt="Schatz Ventures"
-    width="1600"
-    height="900"
-    onerror="this.style.display='none'; document.getElementById('fallback').hidden=false;"
-  />
+  <div class="container">
+    <img
+      src="schatzventureslogo.png"
+      alt="Schatz Ventures"
+      width="1600"
+      height="900"
+      onerror="this.style.display='none'; document.getElementById('fallback').hidden=false;"
+    />
+    <div class="email">
+      <a href="mailto:bryan@schatzventures.com">bryan@schatzventures.com</a>
+    </div>
+  </div>
   <div id="fallback" class="fallback" hidden>Schatz Ventures</div>
 </body>
 </html>
-
-
-
